@@ -1,0 +1,449 @@
+*{
+    margin: 0px;
+    padding: 0px;  
+    font-family:Inter;  
+}
+html,body{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    overflow-x:hidden;
+    /* position: relative; */
+}
+
+.navbar{
+    background: #FFFFFF;   
+    position: fixed;
+    top: 0;
+    /* left: 0;
+    right: 0;
+    z-index:1; */
+    z-index: 1;
+    width: 100%;
+    height:142px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    /* Padding :38px, 96px, 38px, 96px; */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.nav{
+    display: flex;
+    margin-right: 80px;
+    flex-wrap: wrap;
+}
+
+.nav li{
+    list-style-type: none;
+}
+
+.nav li a{
+    text-decoration: none;
+    color:#000000;
+    margin:25px;
+    font-weight: 600;
+    font-display: bold;
+}
+.nav li a.active {
+    background-color: yellow; /* This will set the background to yellow for active links */
+}
+
+.navbar-img{
+    background-image: url("/Images/Rectangle 181.png");
+    /* background-size: cover; */
+    background-position:left;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:90px;
+    margin-left:100px;
+}
+
+/* Responsive Design for Mobile Screens */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-img {
+        width: 160px;
+        height: 60px;
+        margin: 0 auto 20px auto;
+    }
+
+    .nav li a {
+        /* margin: 8px 0; */
+        /* font-size: 14px; */
+    }
+}
+
+  .skills-container{
+    /* z-index:2; */
+    margin-top: 140px;
+    /* background-color: #f4f4f4; */
+    background-color: #f0f0f6;
+    padding-top: 30px;
+    /* position: relative; */
+  }
+
+.description{
+    margin-top: 30px;
+    position: relative;
+}
+
+.description h1{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #2b2b2b;
+}
+
+.description p{
+    word-spacing: 1px;
+    width: 38%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    margin-top:20px;
+    margin-bottom:30px;
+    color: #767676;
+    font-size: 20px;
+}
+    
+    .cards-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* padding: 20px; */
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: -10px;
+    margin-top: -30px;
+    /* height:335px; */
+}
+
+.skill {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill p {
+    flex: 1;
+    margin: 0;
+    color: #777677;
+}
+
+
+.skill span {
+    margin-left: 10px; /* Add some spacing between text and progress bar */
+    color: #333;
+    font-weight: bold;
+}
+
+.progress-bar {
+    /* flex: ; */
+    height: 2px;
+    border: 1px solid #ffb400;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1px 2px 1px 1px;
+
+    /* position: relative; */
+    /* overflow: hidden; */
+    margin-top: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #ffbc00;
+    position: relative;
+    transition: width 0.2s ease;
+    padding-top:1px;
+    /* padding-bottom:0.5px; */
+    /* margin: 1px 1px; */
+    /* margin-top: 1px;
+    margin-bottom: 1px; */
+}
+
+.skill-card {
+    background-color: white;
+    padding: 40px 30px 20px 30px;
+    margin-top: 40px;
+    height: 335px;
+}
+
+.skill-card h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2B2B2B;
+}
+
+.btn, #addSkillBtn {
+    /* display: inline-block; */
+    background-color: #FFB400;
+    font-weight: 700px;
+    /* color: #000000; */
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    margin-left: 700px;
+    font-family: 'inter';
+    text-align: center;
+    position: relative;
+}
+
+
+/* CSS FOR ADD SKILL SECTION */
+/* The Modal (background) */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0, 0, 0); 
+    background-color: rgba(0, 0, 0, 0.4); 
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 2% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-content h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 300%;
+    font-weight: bolder;
+  }
+  
+  .modal-content input[type="text"],
+  .modal-content input[type="number"] {
+    width: 100%;
+    padding: 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: #f7f7f9;
+    font-size: 18px;
+  }
+  
+  .skillsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .skills-input {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .skills-input input[type="text"] {
+    width: 70%;
+  }
+  
+  .skills-input input[type="number"] {
+    width: 25%;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .cancel-modal-btn {
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+  }
+  
+  .cancel-modal-btn:hover {
+    border: 1px solid rgba(255, 0, 0, 0.687);
+    color: rgba(255, 0, 0, 0.687);
+    cursor: pointer;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+ 
+  /* CSS FOR FOOTER SECTION */
+footer {
+    background-color: #f1f0f7;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-right: -60px;
+    margin-top: -40px;
+    /* text-align: center; */
+}
+
+.top-logos {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.top-logos img {
+    /* max-width: 100px;
+     */
+     width: 150px;
+     height: 154px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.central-logo img {
+    width: 150px;
+    height:80px;
+    margin-bottom: 40px;
+}
+
+.ratings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap:20px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 10px; */
+    margin-left: 240px;
+}
+
+.ratings .rating img {
+    width: 91px;
+    margin-bottom: 1px;
+}
+
+.ratings .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between the image and text */
+}
+
+.ratings p {
+    font-size: 16px;
+    color: #767676;
+    font-weight: 400;
+    margin: 0;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    padding-bottom: 0px;
+}
+
+.quick-links, .portfolio, .connect {
+    text-align: left;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quick-links h4{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.portfolio h4{
+    font-weight: 700;
+    font-size: 20px;
+} 
+
+.connect h4{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.quick-links ul, .portfolio ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links li, .portfolio li {
+    margin-bottom: 20px;
+}
+
+.quick-links ul a{
+   text-decoration: none;
+   color:#000000;
+   font-size: 16px;
+   font-weight: 400;
+   /* margin: 10px; */
+}
+.portfolio ul a{
+   text-decoration: none;
+   color:#000000;
+   font-size: 16px;
+   font-weight: 400;
+   
+}
+
+footer .copyright {
+    text-align: center;
+    height: 24px;
+    margin-top: 20px;
+    /* padding-bottom: 30px; */
+    font-size: 16px;
+    color: #666;
+    padding-top: 10px;
+}
